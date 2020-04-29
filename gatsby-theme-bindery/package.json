@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-theme-bindery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.6.0"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.9",
+    "@mdx-js/react": "^1.5.9",
+    "gatsby-plugin-mdx": "^1.2.0",
+    "gatsby-source-filesystem": "^2.3.0"
+  },
+  "devDependencies": {
+    "jest": "^25.4.0"
+  }
+}
