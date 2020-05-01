@@ -3,6 +3,10 @@ describe("Index page", () => {
     cy.visit("/")
   })
 
+  it("Displays book title", () => {
+    cy.get("h1").should("contain", "The Wonderful Wizard of Oz")
+  })
+
   it("Lists chapters", () => {
     const titles = [
       "The Cyclone",
