@@ -51,6 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const chapters = result.data.allMdx.edges;
   chapters.forEach(({ node }, index) => {
+    const previousChapter = index > 0 ? chapters[index - 1] : null;
     const nextChapter = chapters[index + 1];
 
     createPage({
@@ -58,6 +59,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       component: themeOptions.component,
       context: {
         id: node.id,
+        previous: previousChapter ? previousChapter.node.id : null,
         next: nextChapter ? nextChapter.node.id : null,
       },
     });

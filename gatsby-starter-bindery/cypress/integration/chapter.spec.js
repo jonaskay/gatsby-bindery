@@ -17,13 +17,16 @@ describe("Chapter page", () => {
     )
   })
 
-  it("Displays link to next chapter", () => {
+  it("Displays links to next and previous chapters", () => {
     cy.get("a").contains("Next").click()
-
     cy.title({ timeout: 5000 }).should(
       "contain",
       "The Council with the Munchkins"
     )
     cy.get("h2").should("have.text", "2. The Council with the Munchkins")
+
+    cy.get("a").contains("Previous").click()
+    cy.title({ timeout: 5000 }).should("contain", "The Cyclone")
+    cy.get("h2").should("have.text", "1. The Cyclone")
   })
 })
