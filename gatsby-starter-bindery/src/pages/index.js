@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -20,7 +20,9 @@ const IndexPage = ({ data }) => {
       <h2>Contents</h2>
       <ol>
         {chapters.map(({ node: chapter }) => (
-          <li key={chapter.id}>{chapter.frontmatter.title}</li>
+          <li key={chapter.id}>
+            <Link to={chapter.fields.slug}>{chapter.frontmatter.title}</Link>
+          </li>
         ))}
       </ol>
     </Layout>
@@ -35,6 +37,9 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
+          }
+          fields {
+            slug
           }
         }
       }

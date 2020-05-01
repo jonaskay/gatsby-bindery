@@ -16,6 +16,47 @@ exports.onCreateNode = ({ node, actions, getNode }, themeOptions) => {
         node,
         value: filenameParser.number(filePath),
       });
+
+      const basePath = themeOptions.basePath || "";
+      const slug = filenameParser.slug(filePath);
+      createNodeField({
+        name: "slug",
+        node,
+        value: `${basePath}${slug}`,
+      });
     }
   }
+};
+
+exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
+  const { createPage } = actions;
+  const result = await graphql(`
+    query {
+      allMdx {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  if (result.errors) {
+    reporter.panicOnBuild(`ERROR: Loading "createPages" query`);
+  }
+
+  const chapters = result.data.allMdx.edges;
+  chapters.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: themeOptions.component,
+      context: {
+        id: node.id,
+      },
+    });
+  });
 };

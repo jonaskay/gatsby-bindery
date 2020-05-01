@@ -9,4 +9,9 @@ module.exports = {
 
     return parseInt(match[1]);
   },
+
+  slug: (str) => {
+    const result = str.replace(/^\/\d+-/, "/");
+    return result;
+  },
 };

@@ -13,3 +13,16 @@ describe(".number()", () => {
     expect(number("/84r/")).toBe(undefined);
   });
 });
+
+describe(".slug()", () => {
+  const { slug } = parser;
+
+  it("returns chapter slug", () => {
+    expect(slug("/0-foo/")).toBe("/foo/");
+    expect(slug("/42-bar/")).toBe("/bar/");
+    expect(slug("/1337/")).toBe("/1337/");
+    expect(slug("/f00/")).toBe("/f00/");
+    expect(slug("/84r/")).toBe("/84r/");
+    expect(slug("/1-2-3/")).toBe("/2-3/");
+  });
+});

@@ -29,7 +29,11 @@ module.exports = {
     },
     {
       resolve: `gatsby-theme-bindery`,
-      options: { contentPath: `${__dirname}/content/chapters` },
+      options: {
+        contentPath: `${__dirname}/content/chapters`,
+        basePath: `/chapters`,
+        component: `${__dirname}/src/templates/chapter.js`,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
