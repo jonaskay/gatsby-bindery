@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(sort: { fields: [fields___number], order: ASC }) {
         edges {
           node {
             id
@@ -50,12 +50,15 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   }
 
   const chapters = result.data.allMdx.edges;
-  chapters.forEach(({ node }) => {
+  chapters.forEach(({ node }, index) => {
+    const nextChapter = chapters[index + 1];
+
     createPage({
       path: node.fields.slug,
       component: themeOptions.component,
       context: {
         id: node.id,
+        next: nextChapter ? nextChapter.node.id : null,
       },
     });
   });

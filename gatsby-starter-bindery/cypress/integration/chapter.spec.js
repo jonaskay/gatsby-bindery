@@ -16,4 +16,14 @@ describe("Chapter page", () => {
       "Dorothy lived in the midst of the great Kansas prairies"
     )
   })
+
+  it("Displays link to next chapter", () => {
+    cy.get("a").contains("Next").click()
+
+    cy.title({ timeout: 5000 }).should(
+      "contain",
+      "The Council with the Munchkins"
+    )
+    cy.get("h2").should("have.text", "2. The Council with the Munchkins")
+  })
 })
