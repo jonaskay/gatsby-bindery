@@ -17,6 +17,11 @@ describe("Chapter page", () => {
     )
   })
 
+  it("Displays a link to index page", () => {
+    cy.get("a").contains("Home").click()
+    cy.get("h1").should("contain", "The Wonderful Wizard of Oz")
+  })
+
   it("Displays links to next and previous chapters", () => {
     cy.get("a").contains("Next").click()
     cy.title({ timeout: 5000 }).should(

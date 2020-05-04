@@ -15,6 +15,7 @@ const Chapter = ({ data: { current, previous, next, chapters } }) => (
         <MDXRenderer>{current.body}</MDXRenderer>
       </MDXProvider>
       {previous && <Link to={previous.fields.slug}>Previous</Link>}
+      <Link to="/">Home</Link>
       {next && <Link to={next.fields.slug}>Next</Link>}
       <ChapterList
         active={current.id}
