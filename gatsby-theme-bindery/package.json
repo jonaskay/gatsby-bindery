@@ -14,7 +14,8 @@
     "@mdx-js/mdx": "^1.5.9",
     "@mdx-js/react": "^1.5.9",
     "gatsby-plugin-mdx": "^1.2.0",
-    "gatsby-source-filesystem": "^2.3.0"
+    "gatsby-source-filesystem": "^2.3.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "jest": "^25.4.0"
