@@ -29,4 +29,10 @@ describe("Chapter page", () => {
     cy.title({ timeout: 5000 }).should("contain", "The Cyclone")
     cy.get("h2").should("have.text", "1. The Cyclone")
   })
+
+  it("Displays links to all chapters", () => {
+    cy.get("a").contains("The Cyclone").should("not.exist")
+    cy.get("a").contains("The Council with the Munchkins").should("exist")
+    cy.get("a").contains("How Dorothy Saved the Scarecrow").should("exist")
+  })
 })
