@@ -9,7 +9,7 @@ const renderSpan = title => <span>{title}</span>
 const renderLink = (title, slug) => <Link to={slug}>{title}</Link>
 
 const ChapterList = ({ active, data }) => (
-  <ol>
+  <ol style={{ lineHeight: 1.5, paddingLeft: "2rem" }}>
     {data.map(item => {
       const {
         id,
@@ -18,7 +18,7 @@ const ChapterList = ({ active, data }) => (
       } = item
 
       return (
-        <li key={item.id}>
+        <li key={item.id} style={{ margin: "0.25rem 0" }}>
           {isActive(id, active) ? renderSpan(title) : renderLink(title, slug)}
         </li>
       )

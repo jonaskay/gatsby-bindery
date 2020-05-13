@@ -5,29 +5,26 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: "#212121",
+      fontFamily: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`,
+      textAlign: "center",
+      padding: "1rem 0",
     }}
   >
-    <div
+    <h1
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        fontWeight: 400,
+        fontSize: "1.25rem",
+        margin: 0,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+      <Link
+        to="/"
+        style={{ color: "rgba(255,255,255,0.87)", textDecoration: "none" }}
+      >
+        {siteTitle}
+      </Link>
+    </h1>
   </header>
 )
 
