@@ -1,12 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Article from "../components/article"
+import ChapterList from "../components/chapter-list"
 
 const IndexPage = ({ data }) => {
-  const chapters = data.allMdx.edges
+  const chapters = data.allMdx.edges.map(({ node }) => node)
 
   return (
     <Layout>
@@ -34,15 +35,7 @@ const IndexPage = ({ data }) => {
           }}
         >
           <h2 style={{ margin: 0 }}>Contents</h2>
-          <ol style={{ lineHeight: 1.5, paddingLeft: "2rem" }}>
-            {chapters.map(({ node: chapter }) => (
-              <li key={chapter.id} style={{ margin: "0.25rem 0" }}>
-                <Link to={chapter.fields.slug}>
-                  {chapter.frontmatter.title}
-                </Link>
-              </li>
-            ))}
-          </ol>
+          <ChapterList data={chapters} />
         </aside>
         <p>
           Folklore, legends, myths and fairy tales have followed childhood
@@ -86,12 +79,7 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
+          ...ChapterFragment
         }
       }
     }
