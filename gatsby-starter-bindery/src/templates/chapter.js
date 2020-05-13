@@ -5,12 +5,13 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Article from "../components/article"
 import ChapterList from "../components/chapter-list"
 
 const Chapter = ({ data: { current, previous, next, chapters } }) => (
   <Layout>
     <SEO title={current.frontmatter.title} />
-    <article>
+    <Article>
       <MDXProvider>
         <MDXRenderer>{current.body}</MDXRenderer>
       </MDXProvider>
@@ -48,7 +49,7 @@ const Chapter = ({ data: { current, previous, next, chapters } }) => (
           data={chapters.edges.map(({ node }) => node)}
         />
       </nav>
-    </article>
+    </Article>
   </Layout>
 )
 

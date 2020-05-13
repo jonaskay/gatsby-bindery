@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Article from "../components/article"
 
 const IndexPage = ({ data }) => {
   const chapters = data.allMdx.edges
@@ -25,7 +26,7 @@ const IndexPage = ({ data }) => {
           L. Frank Baum
         </span>
       </h1>
-      <article>
+      <Article>
         <aside
           style={{
             background: "#F5F5F5",
@@ -71,7 +72,7 @@ const IndexPage = ({ data }) => {
           <br />
           Chicago, April, 1900.
         </p>
-      </article>
+      </Article>
     </Layout>
   )
 }
