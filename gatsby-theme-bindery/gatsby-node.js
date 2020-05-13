@@ -12,6 +12,12 @@ exports.onCreateNode = ({ node, actions, getNode }, themeOptions) => {
       const filePath = createFilePath({ node, getNode });
 
       createNodeField({
+        name: "content",
+        node,
+        value: "chapter",
+      });
+
+      createNodeField({
         name: "number",
         node,
         value: filenameParser.number(filePath),

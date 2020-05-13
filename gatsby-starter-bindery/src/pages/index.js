@@ -78,7 +78,10 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMdx(sort: { fields: [fields___number], order: ASC }) {
+    allMdx(
+      filter: { fields: { content: { eq: "chapter" } } }
+      sort: { fields: [fields___number], order: ASC }
+    ) {
       edges {
         node {
           id
