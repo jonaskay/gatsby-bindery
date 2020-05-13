@@ -3,8 +3,12 @@ describe("Index page", () => {
     cy.visit("/")
   })
 
-  it("Displays book title", () => {
+  it("Displays introduction content", () => {
     cy.get("h1").should("contain", "The Wonderful Wizard of Oz")
+    cy.get("p").should(
+      "contain",
+      "Folklore, legends, myths and fairy tales have followed childhood through the ages"
+    )
   })
 
   it("Lists chapters", () => {
