@@ -10,7 +10,7 @@ describe("Chapter page", () => {
   })
 
   it("Displays chapter content", () => {
-    cy.get("h2").should("have.text", "1. The Cyclone")
+    cy.get("h1").should("contain", "1. The Cyclone")
     cy.get("p").should(
       "contain",
       "Dorothy lived in the midst of the great Kansas prairies"
@@ -28,11 +28,11 @@ describe("Chapter page", () => {
       "contain",
       "The Council with the Munchkins"
     )
-    cy.get("h2").should("have.text", "2. The Council with the Munchkins")
+    cy.get("h1").should("contain", "2. The Council with the Munchkins")
 
     cy.get("a").contains("Previous").click()
     cy.title({ timeout: 5000 }).should("contain", "The Cyclone")
-    cy.get("h2").should("have.text", "1. The Cyclone")
+    cy.get("h1").should("contain", "1. The Cyclone")
   })
 
   it("Displays links to all chapters", () => {
