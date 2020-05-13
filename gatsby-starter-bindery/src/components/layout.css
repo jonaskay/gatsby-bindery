@@ -3,20 +3,6 @@ html, body {
   font-family: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-aside {
-  box-sizing: border-box;
-  width: 100%;
-}
-
-@media screen and (min-width: 640px) {
-  aside {
-    float: right;
-    margin-bottom: 1rem;
-    margin-left: 1.5rem;
-    width: 15rem;
-  }
-}
-
 a {
   color: #0091EA;
 }
