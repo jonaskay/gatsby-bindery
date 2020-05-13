@@ -1,8 +1,9 @@
 {
   "name": "gatsby-theme-bindery",
-  "version": "1.0.0",
+  "description": "Gatsby theme for creating chapter pages from MDX files",
+  "version": "0.1.0",
   "main": "index.js",
-  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "author": "jonaskay <jonaskay@iki.fi>",
   "license": "MIT",
   "scripts": {
     "test": "jest"
