@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Image from "../components/image"
 import Article from "../components/article"
 import ChapterList from "../components/chapter-list"
 
@@ -12,6 +13,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
+
       <h1
         style={{
           lineHeight: 1.375,
@@ -66,6 +68,9 @@ const IndexPage = ({ data }) => {
           Chicago, April, 1900.
         </p>
       </Article>
+      <div style={{ margin: "0 auto", width: 150 }}>
+        <Image />
+      </div>
     </Layout>
   )
 }
