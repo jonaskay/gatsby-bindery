@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const isActive = (currentId, activeId) => currentId === activeId
 
@@ -37,5 +37,16 @@ ChapterList.propTypes = {
     })
   ).isRequired,
 }
+
+export const query = graphql`
+  fragment ChapterFragment on Mdx {
+    frontmatter {
+      title
+    }
+    fields {
+      slug
+    }
+  }
+`
 
 export default ChapterList
