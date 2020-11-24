@@ -5,10 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace example build",
+    "build": "yarn workspace gatsby-starter-bindery build",
     "develop": "yarn workspace gatsby-starter-bindery develop",
-    "test": "yarn workspace gatsby-theme-bindery test",
-    "test:component": "yarn workspace gatsby-starter-bindery test",
+    "test:unit": "yarn workspace gatsby-theme-bindery test && yarn workspace gatsby-starter-bindery test",
     "test:e2e": "yarn workspace gatsby-starter-bindery test:e2e"
   },
   "workspaces": [
